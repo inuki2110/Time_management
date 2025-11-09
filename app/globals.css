@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    :root {
+        --background: 0 0% 7.06%;
+        --foreground: 0 0% 100%;
+        --card: 0 0% 12.94%;
+        --card-foreground: 0 0% 100%;
+        --popover: 0 0% 12.94%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 275.92 59.17% 52.94%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 0 0% 25.1%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 0 0% 12.16%;
+        --muted-foreground: 0 0% 100%;
+        --accent: 0 0% 21.18%;
+        --accent-foreground: 0 0% 98.82%;
+        --destructive: 0 78.67% 55.88%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 0 0% 27.06%;
+        --input: 0 0% 14.12%;
+        --ring: 0 0% 7.06%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+        --radius: 0.5rem;
+
+        --sidebar-background: 240 5.9% 10%;
+        --sidebar-foreground: 240 4.8% 95.9%;
+        --sidebar-primary: 224.3 76.3% 48%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 240 3.7% 15.9%;
+        --sidebar-accent-foreground: 240 4.8% 95.9%;
+        --sidebar-border: 240 3.7% 15.9%;
+        --sidebar-ring: 217.2 91.2% 59.8%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+.rbc-allday-cell,
+.rbc-addons-dnd-row-body,
+.rbc-row-bg,
+.rbc-row-content {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.rbc-time-header {
+    display: none !important;
+}
+
+.rbc-time-view {
+    @apply !border-0;
+    background-color: hsl(var(--background));
+}
+
+.rbc-time-content {
+    border-top: none !important;
+}
+
+.rbc-time-gutter {
+    background-color: hsl(var(--muted)) !important;
+    color: hsl(var(--muted-foreground)) !important;
+    border-right: 1px solid hsl(var(--border)) !important;
+}
+
+.rbc-label { 
+    font-size: 0.75rem !important;
+    font-weight: 400 !important;
+    padding-right: 8px !important;
+}
+
+.rbc-timeslot-group {
+    @apply !border-border !flex !flex-col;
+}
+
+.rbc-time-slot {
+    @apply !border-border !border-t-0;
+    @apply !flex !items-center !place-content-center !flex-grow !h-full;
+}
+
+.rbc-day-bg:hover {
+    background-color: hsl(var(--accent)) !important;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.rbc-today {
+    @apply !bg-card;
+}
+
+.rbc-event {
+    border: none !important;
+    color: hsl(var(--primary-foreground)) !important;
+    font-weight: 500 !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+    opacity: 0.9;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.rbc-event:hover {
+    opacity: 1;
+}
+
+.rbc-current-time-indicator {
+    background-color: hsl(var(--primary)) !important;
+    height: 2px !important;
+    border-radius: 9999px;
+    z-index: 10;
+}
+
+.rbc-header {
+    border: none !important;
+    color: hsl(var(--foreground)) !important;
+    font-weight: 500 !important;
+    font-size: 0.875rem !important;
+    padding: 0.5rem 0 !important;
+    background-color: hsl(var(--background)) !important;
+}

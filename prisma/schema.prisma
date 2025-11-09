@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model TimeEntry {
+  id          String   @id @default(uuid())
+  date        String   // lưu 'YYYY-MM-DD'
+  category    String
+  description String?  @db.Text
+  startTime   DateTime
+  endTime     DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Category {
+  id        String @id @default(uuid())
+  name      String @unique
+  color     String
+  textColor String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Todo {
+  id        Int      @id @default(autoincrement())
+  text      String   @db.Text
+  completed Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
